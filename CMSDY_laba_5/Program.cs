@@ -6,70 +6,70 @@ const double h = 0.00001;
 static void Main(string[] args)
 {
     double a = 0.0, b = 20.0;
-    int n = round((b - a) / h) + 1;
+    int n = Math.Round((b - a) / h) + 1;
 
     double [] grid_ = new double[n];
     double[] res_p = new double[n];
     double[] res_q = new double[n];
 
 
-//    void creat_grid(double[] grid_, int n, double a, double b);
-//    size_t part = 0;
+    //    void creat_grid(double[] grid_, int n, double a, double b);
+    //    size_t part = 0;
 
-//    std::cout << "\nMENU\n";
-//    std::cout << "direct (1)\n";
-//    std::cout << "sequential (2)\n";
-//    std::cout << "exit(0)?\n\n";
-//    std::cin >> part;
+    //    std::cout << "\nMENU\n";
+    //    std::cout << "direct (1)\n";
+    //    std::cout << "sequential (2)\n";
+    //    std::cout << "exit(0)?\n\n";
+    //    std::cin >> part;
 
-//    while (part != 0)
-//    {
-//        switch (part)
-//        {
-//            case (1):
-//                direct(grid_, res_p, res_q, n);
-//                break;
-//            case (2):
-//                sequential(grid_, res_p, res_q, n);
-//                break;
-//            default:
-//                break;
-//        }
-//        FILE* file;
-//        fopen_s(&file, "gспрямой_e5.txt", "w");
-//        int k = 0;
-//        std::cout << std::fixed << std::setprecision(16);
-//        for (int i = 0; i < n; i += 100)
-//        {
-//            k++;
-//            fprintf_s(file, "%20.15lf %20.15lf %20.15lf\n", grid_[i], res_p[i],
-//           res_q[i]);
-//            std::cout << std::setw(7) << grid_[i] << std::setw(25) << res_p[i] << std::setw(25) << res_q[i] << std::endl;
-//        }
-//        std::cout << "k=" << k << std::endl;
-//        std::cout << std::setw(7) << grid_[(n) / 2] << std::setw(25) << res_p[(n) / 2]
-//        << std::setw(25) << res_q[(n) / 2] << std::endl;
-//        fclose(file);
-//        std::cout << "\nMENU\n";
-//        std::cout << "direct (1)\n";
-//        std::cout << "sequential (2)\n";
-//        std::cout << "exit(0)?\n\n";
-//        std::cin >> part;
-//    }
-//}
+    //    while (part != 0)
+    //    {
+    //        switch (part)
+    //        {
+    //            case (1):
+    //                direct(grid_, res_p, res_q, n);
+    //                break;
+    //            case (2):
+    //                sequential(grid_, res_p, res_q, n);
+    //                break;
+    //            default:
+    //                break;
+    //        }
+    //        FILE* file;
+    //        fopen_s(&file, "gспрямой_e5.txt", "w");
+    //        int k = 0;
+    //        std::cout << std::fixed << std::setprecision(16);
+    //        for (int i = 0; i < n; i += 100)
+    //        {
+    //            k++;
+    //            fprintf_s(file, "%20.15lf %20.15lf %20.15lf\n", grid_[i], res_p[i],
+    //           res_q[i]);
+    //            std::cout << std::setw(7) << grid_[i] << std::setw(25) << res_p[i] << std::setw(25) << res_q[i] << std::endl;
+    //        }
+    //        std::cout << "k=" << k << std::endl;
+    //        std::cout << std::setw(7) << grid_[(n) / 2] << std::setw(25) << res_p[(n) / 2]
+    //        << std::setw(25) << res_q[(n) / 2] << std::endl;
+    //        fclose(file);
+    //        std::cout << "\nMENU\n";
+    //        std::cout << "direct (1)\n";
+    //        std::cout << "sequential (2)\n";
+    //        std::cout << "exit(0)?\n\n";
+    //        std::cin >> part;
+    //    }
+ }
 
 
-//void creat_grid(double[] grid, int n, double[] t_start, double[] t_end)
-//{
-//    grid[0] = t_start;
-//    for (int i = 1; i < n - 1; i++)
-//    {
-//        grid[i] = i * h;
-//    }
-//    grid[n - 1] = t_end;
-//}
+    //void creat_grid(double[] grid, int n, double[] t_start, double[] t_end)
+    //{
+    //    grid[0] = t_start;
+    //    for (int i = 1; i < n - 1; i++)
+    //    {
+    //        grid[i] = i * h;
+    //    }
+    //    grid[n - 1] = t_end;
+    //}
 
-void direct(double[] grid, double[] p, double[] q, int n)
+    void direct(double[] grid, double[] p, double[] q, int n)
 {
      p[0] = 1e5;
      q[0] = 0.0;
@@ -150,12 +150,10 @@ double func_q(double t, double p, double q)
 }
 
 double q_n(double t)
-{
-    double q0 = 0.001;
-    if (t < 1)
-        return q0 * t;
-    else
-        return q0;
-}
-
-
+    {
+        double q0 = 0.001;
+        if (t < 1)
+            return q0 * t;
+        else
+            return q0;
+    }
